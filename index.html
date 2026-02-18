@@ -9,190 +9,152 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Arial', sans-serif;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-background:#000;
+background: radial-gradient(circle at top, #111 0%, #000 60%);
 color:white;
 overflow:hidden;
 }
 
-/* LOADING SCREEN */
-#loader{
-position:fixed;
+/* CINEMATIC DARK OVERLAY */
+body::after{
+content:"";
+position:absolute;
 width:100%;
 height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-color:red;
-font-size:30px;
-letter-spacing:3px;
-z-index:9999;
-animation:fadeOut 3s forwards;
-animation-delay:3s;
+background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+z-index:-1;
 }
 
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden;}
-}
-
-/* Elephant */
-.elephant{
-position:absolute;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-opacity:0.15;
-animation:trunkLift 4s ease forwards;
-}
-
-@keyframes trunkLift{
-0%{transform:translateX(-50%) rotate(0deg);}
-50%{transform:translateX(-50%) rotate(-5deg);}
-100%{transform:translateX(-50%) rotate(0deg);}
-}
-
-/* MAIN CONTENT */
+/* MAIN CONTAINER */
 .container{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
-opacity:0;
-animation:showContent 2s forwards;
-animation-delay:4s;
+width:90%;
+max-width:600px;
 }
 
-@keyframes showContent{
-to{opacity:1;}
-}
-
-/* 3D RED GLOW TEXT */
+/* ROYAL RED 3D TEXT */
 .title{
-font-size:70px;
+font-size:65px;
 font-weight:900;
-color:#ff0000;
-text-shadow:
-0 0 10px #ff0000,
-0 0 20px #ff1a1a,
-0 0 40px #ff3333,
-0 0 80px #990000;
-animation:pulse 2s infinite alternate;
 letter-spacing:6px;
+color:#b30000;
+text-shadow:
+0 2px 0 #660000,
+0 4px 10px rgba(255,0,0,0.4),
+0 8px 25px rgba(255,0,0,0.6);
+animation:fadeIn 2s ease forwards;
 }
 
-@keyframes pulse{
-from{transform:scale(1);}
-to{transform:scale(1.05);}
-}
-
-/* Subtitle animation */
+/* Subtitle */
 .subtitle{
 margin-top:20px;
-font-size:20px;
-color:#ff4d4d;
+font-size:18px;
+color:#cccccc;
+letter-spacing:2px;
 animation:slideUp 2s ease forwards;
-}
-
-@keyframes slideUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
 }
 
 /* Buttons */
 .btn{
-display:inline-block;
-margin:25px;
-padding:15px 40px;
-border-radius:50px;
+display:block;
+margin:25px auto;
+padding:15px;
+border-radius:40px;
 font-size:18px;
 font-weight:bold;
 text-decoration:none;
 color:white;
-background:linear-gradient(45deg,#ff0000,#990000);
-box-shadow:0 0 20px red;
-transition:0.4s;
+background:linear-gradient(45deg,#990000,#cc0000);
+box-shadow:0 10px 30px rgba(255,0,0,0.3);
+transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 40px #ff0000;
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(255,0,0,0.6);
 }
 
-/* Neon Cursor */
-.cursor{
+/* Subscriber */
+.subs{
+margin-top:30px;
+font-size:22px;
+color:#ff3333;
+font-weight:bold;
+}
+
+/* Animations */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(-30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideUp{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Loading Screen */
+#loader{
 position:fixed;
-width:15px;
-height:15px;
-background:red;
-border-radius:50%;
-pointer-events:none;
-box-shadow:0 0 20px red,0 0 40px #ff1a1a;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:25px;
+letter-spacing:4px;
+color:#990000;
+animation:fadeOut 2s forwards;
+animation-delay:2s;
+z-index:9999;
+}
+
+@keyframes fadeOut{
+to{opacity:0; visibility:hidden;}
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader">WELCOME TO RHUTHVIK BANTU</div>
-
-<img src="elephant.png" class="elephant" width="400">
+<div id="loader">WELCOME</div>
 
 <div class="container">
 <h1 class="title">RHUTHVIK BANTU</h1>
-<p class="subtitle">Cricket | Celebrities | World Trends</p>
+
+<p class="subtitle">
+Daily Viral Rankings | Cricket | Celebrities | World Trends
+</p>
 
 <a href="https://youtube.com" class="btn">YouTube</a>
 <a href="https://instagram.com" class="btn">Instagram</a>
 
-<h2 style="margin-top:30px;color:#ff0000;">
-Subscribers: <span id="subs">Loading...</span>
-</h2>
-
-<div id="chatbot" style="margin-top:30px;">
-<input type="text" id="userInput" placeholder="Ask me something..."
-style="padding:10px;border-radius:20px;border:none;">
-<button onclick="reply()" class="btn">Send</button>
-<p id="botReply" style="margin-top:10px;"></p>
+<div class="subs">
+Subscribers: <span id="count">31500</span>
 </div>
 
 </div>
-
-<div class="cursor" id="cursor"></div>
 
 <script>
+/* Smooth Counter */
+let count = 30000;
+let target = 31500;
 
-/* Neon Cursor Effect */
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", e=>{
-cursor.style.top = e.clientY + "px";
-cursor.style.left = e.clientX + "px";
-});
-
-/* Fake Live Subscriber Counter */
-let subs = 100000;
-setInterval(()=>{
-subs += Math.floor(Math.random()*5);
-document.getElementById("subs").innerText = subs.toLocaleString();
-},2000);
-
-/* Simple AI Chatbot */
-function reply(){
-let input = document.getElementById("userInput").value;
-let output = "Welcome to RHUTHVIK BANTU website!";
-if(input.toLowerCase().includes("youtube")){
-output = "Subscribe on YouTube!";
+let counter = setInterval(()=>{
+count += 50;
+document.getElementById("count").innerText = count;
+if(count >= target){
+clearInterval(counter);
 }
-if(input.toLowerCase().includes("instagram")){
-output = "Follow on Instagram!";
-}
-document.getElementById("botReply").innerText = output;
-}
-
+},40);
 </script>
 
 </body>
