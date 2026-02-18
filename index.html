@@ -69,17 +69,18 @@ to{opacity:1; transform:translateY(0);}
 
 /* ===== Animated Name ===== */
 .title{
-font-size:70px;
+font-size: clamp(40px, 8vw, 70px);
 font-weight:900;
-letter-spacing:8px;
+letter-spacing:4px;
 background:linear-gradient(90deg,#8e2de2,#00c6ff,#ffffff,#8e2de2);
 background-size:300%;
 -webkit-background-clip:text;
 color:transparent;
 animation:gradientMove 6s linear infinite;
 text-shadow:0 0 30px rgba(0,198,255,0.3);
+word-break:break-word;
+padding:0 15px;
 }
-
 /* Slight floating effect */
 .title:hover{
 transform:scale(1.05);
