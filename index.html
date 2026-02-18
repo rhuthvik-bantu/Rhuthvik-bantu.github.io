@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>RHUTHVIK BANTU</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -10,47 +9,46 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Poppins', sans-serif;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+/* Floating Gold Particles */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* Section Styling */
+section{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-background:#0a0a0a;
-overflow:hidden;
-color:white;
-}
-
-/* Animated Dark Luxury Background */
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:radial-gradient(circle at 30% 30%, #111 0%, #000 40%, #111 60%);
-animation:moveBg 8s linear infinite;
-z-index:-2;
-}
-
-@keyframes moveBg{
-0%{transform:translate(-10%,-10%)}
-50%{transform:translate(-20%,-20%)}
-100%{transform:translate(-10%,-10%)}
-}
-
-/* Golden Shine Animation */
-.title{
-font-size:60px;
-font-weight:900;
 text-align:center;
+padding:20px;
+}
+
+/* Luxury Title */
+.title{
+font-size:70px;
+font-weight:900;
+letter-spacing:5px;
 background:linear-gradient(90deg,#ffd700,#fff,#ffd700);
 background-size:200%;
 -webkit-background-clip:text;
 color:transparent;
 animation:shine 4s linear infinite;
-letter-spacing:5px;
+text-shadow:0 0 25px gold;
 }
 
 @keyframes shine{
@@ -58,80 +56,115 @@ letter-spacing:5px;
 100%{background-position:200%}
 }
 
-/* Glow effect */
-.glow{
-text-shadow:0 0 20px #ffd700,
-0 0 40px #ffcc00,
-0 0 60px #ffae00;
-}
-
-/* Subtitle */
-.subtitle{
-margin-top:20px;
-font-size:18px;
-color:#bbb;
-text-align:center;
-}
-
 /* Buttons */
 .btn{
-display:block;
-margin:25px auto;
+margin:20px;
 padding:15px 40px;
 border-radius:50px;
 font-size:20px;
 font-weight:bold;
 text-decoration:none;
 color:black;
-background:linear-gradient(45deg,#ffd700,#ffb700);
+background:linear-gradient(45deg,#ffd700,#ffae00);
 transition:0.4s;
-box-shadow:0 10px 30px rgba(255,215,0,0.4);
+box-shadow:0 10px 30px rgba(255,215,0,0.5);
 }
 
 .btn:hover{
 transform:scale(1.1);
-box-shadow:0 15px 40px rgba(255,215,0,0.7);
+box-shadow:0 15px 40px rgba(255,215,0,0.8);
 }
 
-/* Subscriber Counter */
-.counter{
-margin-top:30px;
-font-size:22px;
-color:#ffd700;
-text-align:center;
-font-weight:bold;
+/* Fade animation */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<div>
-<h1 class="title glow">RHUTHVIK<br>BANTU</h1>
+<canvas id="particles"></canvas>
 
-<p class="subtitle">
-Daily Viral Rankings | Cricket | Celebrities | World Trends
-</p>
+<!-- Background Music -->
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
-<a href="https://youtube.com" class="btn">YouTube</a>
-<a href="https://instagram.com" class="btn">Instagram</a>
+<section>
+<h1 class="title fade">RHUTHVIK BANTU</h1>
+<p class="fade">Daily Viral Rankings | Cricket | Celebrities | World Trends</p>
 
-<div class="counter">
-Subscribers: <span id="count">0</span>
-</div>
-</div>
+<a href="https://youtube.com" class="btn fade">YouTube</a>
+<a href="https://instagram.com" class="btn fade">Instagram</a>
+</section>
+
+<section>
+<h2 class="title fade" style="font-size:40px;">WELCOME TO MY OFFICIAL WEBSITE</h2>
+</section>
 
 <script>
-let count = 0;
-let target = 50000; // change to your real subscriber number
+/* GOLD PARTICLES */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
 
-let counter = setInterval(() => {
-count += 250;
-document.getElementById("count").innerText = count;
-if(count >= target){
-clearInterval(counter);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3,
+d:Math.random()*1
+});
 }
-}, 50);
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="gold";
+ctx.beginPath();
+for(let i=0;i<particles.length;i++){
+let p = particles[i];
+ctx.moveTo(p.x,p.y);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+}
+ctx.fill();
+update();
+}
+
+function update(){
+for(let i=0;i<particles.length;i++){
+let p = particles[i];
+p.y += p.d;
+if(p.y > canvas.height){
+p.y = 0;
+p.x = Math.random()*canvas.width;
+}
+}
+}
+
+setInterval(draw,33);
+
+/* SCROLL FADE */
+const faders = document.querySelectorAll(".fade");
+window.addEventListener("scroll", ()=>{
+faders.forEach(el=>{
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+el.classList.add("show");
+}
+});
+});
 </script>
 
 </body>
