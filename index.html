@@ -1,208 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>RHUTHVIK BANTU</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+<title>RHUTHVIK BANTU</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
+  /* Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body{
-background:#000;
-color:white;
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+  /* Full screen dark background */
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    background: #000;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
 
-/* ===== Loading Screen ===== */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-letter-spacing:6px;
-background:linear-gradient(90deg,#8e2de2,#4a00e0,#00c6ff,#8e2de2);
-background-size:400%;
--webkit-background-clip:text;
-color:transparent;
-animation:shine 3s linear infinite, fadeOut 2s forwards;
-animation-delay:0s,3s;
-z-index:9999;
-}
+  /* Animated gradient title */
+  .title {
+    font-size: clamp(40px, 10vw, 80px);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ff0000, #ff8c00, #ffff00, #ff1493, #00ffff, #ff00ff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(255,0,0,0.5),
+                 0 0 40px rgba(255,140,0,0.4),
+                 0 0 60px rgba(255,20,147,0.3);
+    animation: gradientMove 6s linear infinite, glow 2s ease-in-out infinite alternate;
+  }
 
-@keyframes shine{
-0%{background-position:0%}
-100%{background-position:400%}
-}
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-@keyframes fadeOut{
-to{opacity:0; visibility:hidden;}
-}
+  @keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255,0,0,0.5), 0 0 20px rgba(255,140,0,0.4), 0 0 30px rgba(255,20,147,0.3); }
+    100% { text-shadow: 0 0 30px rgba(255,0,0,0.8), 0 0 60px rgba(255,140,0,0.6), 0 0 90px rgba(255,20,147,0.5); }
+  }
 
-/* ===== Main Container ===== */
-.container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-width:100%;
-max-width:600px;
-padding:0 20px;
-text-align:center;
-opacity:0;
-animation:show 2s ease forwards;
-animation-delay:3.5s;
-}
+  /* Buttons container */
+  .buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-@keyframes show{
-to{opacity:1; transform:translateY(0);}
-}
+  .btn {
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-/* ===== Animated Name ===== */
-.title{
-display:block;
-width:100%;
-font-size:clamp(38px, 9vw, 70px);
-font-weight:900;
-letter-spacing:4px;
-text-align:center;
-margin:0 auto;
-background:linear-gradient(90deg,#8e2de2,#00c6ff,#ffffff,#8e2de2);
-background-size:300%;
--webkit-background-clip:text;
-color:transparent;
-animation:gradientMove 6s linear infinite;
-text-shadow:0 0 25px rgba(0,198,255,0.4);
-}
-/* Slight floating effect */
-.title:hover{
-transform:scale(1.05);
-transition:0.5s;
-}
+  .btn.youtube { background: #ff0000; }
+  .btn.insta   { background: #c32aa3; }
 
-@keyframes gradientMove{
-0%{background-position:0%}
-100%{background-position:300%}
-}
+  .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  }
 
-/* ===== Decorative Line ===== */
-.line{
-width:0;
-height:3px;
-margin:25px auto;
-background:linear-gradient(90deg,#8e2de2,#00c6ff);
-box-shadow:0 0 20px #00c6ff;
-animation:expand 2s ease forwards;
-animation-delay:4s;
-}
+  /* Icon inside buttons */
+  .btn svg { width: 20px; height: 20px; fill: #fff; }
 
-@keyframes expand{
-to{width:250px;}
-}
+  /* Background floating particles */
+  .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+  }
 
-/* ===== Subtitle ===== */
-.subtitle{
-margin-top:20px;
-font-size:16px;
-color:#cccccc;
-letter-spacing:3px;
-opacity:0;
-animation:fadeIn 2s ease forwards;
-animation-delay:4.5s;
-}
+  @keyframes float {
+    0% { transform: translateY(100vh) translateX(0); opacity:0; }
+    50% { opacity:1; }
+    100% { transform: translateY(-10vh) translateX(100px); opacity:0; }
+  }
 
-@keyframes fadeIn{
-to{opacity:1;}
-}
+  /* Decorative welcome text */
+  .welcome {
+    font-size: clamp(20px, 5vw, 40px);
+    margin-bottom: 15px;
+    color: #fff;
+    background: linear-gradient(120deg, #ff1493, #00ffff, #ff8c00);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: welcomeMove 4s linear infinite alternate;
+    text-align: center;
+  }
 
-/* ===== Social Icons ===== */
-.icons{
-margin-top:40px;
-opacity:0;
-animation:fadeIn 2s ease forwards;
-animation-delay:5s;
-}
+  @keyframes welcomeMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
 
-.icons a{
-margin:0 25px;
-font-size:40px;
-color:white;
-transition:0.4s;
-}
-
-/* YouTube */
-.icons a.youtube:hover{
-color:#ff0000;
-transform:translateY(-5px) scale(1.2);
-text-shadow:0 0 25px #ff0000;
-}
-
-/* Instagram */
-.icons a.instagram:hover{
-color:#e1306c;
-transform:translateY(-5px) scale(1.2);
-text-shadow:0 0 25px #e1306c;
-}
-
-/* ===== Subtle Background Glow Animation ===== */
-body::before{
-content:"";
-position:absolute;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#4a00e0,transparent 70%);
-top:-150px;
-left:-150px;
-opacity:0.4;
-animation:moveGlow 10s infinite alternate;
-}
-
-@keyframes moveGlow{
-from{transform:translate(0,0);}
-to{transform:translate(200px,200px);}
-}
 </style>
 </head>
-
 <body>
 
-<div id="loader">WELCOME</div>
+<!-- Background floating particles -->
+<div id="particles"></div>
 
-<div class="container">
+<div class="welcome">Welcome to RHUTHVIK BANTU</div>
+<h1 class="title">RHUTHVIK<br>BANTU</h1>
 
-<h1 class="title">
-RHUTHVIK<br>BANTU
-</h1>
-<p class="subtitle">
-DAILY VIRAL RANKINGS | CRICKET | CELEBRITIES | WORLD TRENDS
-</p>
-
-<div class="icons">
-<a href="https://youtube.com" target="_blank" class="youtube">
-<i class="fab fa-youtube"></i>
-</a>
-
-<a href="https://instagram.com" target="_blank" class="instagram">
-<i class="fab fa-instagram"></i>
-</a>
+<div class="buttons">
+  <a href="https://youtube.com" target="_blank" class="btn youtube">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.998 2.998 0 0 0-2.112-2.114C19.188 3.5 12 3.5 12 3.5s-7.188 0-9.386.572A2.998 2.998 0 0 0 .502 6.186 31.678 31.678 0 0 0 0 12a31.678 31.678 0 0 0 .502 5.814 2.998 2.998 0 0 0 2.112 2.114C4.812 20.5 12 20.5 12 20.5s7.188 0 9.386-.572a2.998 2.998 0 0 0 2.112-2.114A31.678 31.678 0 0 0 24 12a31.678 31.678 0 0 0-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+    YouTube
+  </a>
+  <a href="https://instagram.com" target="_blank" class="btn insta">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.17.056 1.96.24 2.414.415a4.92 4.92 0 0 1 1.753 1.014 4.92 4.92 0 0 1 1.014 1.753c.175.454.359 1.243.415 2.414.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.056 1.17-.24 1.96-.415 2.414a4.92 4.92 0 0 1-1.014 1.753 4.92 4.92 0 0 1-1.753 1.014c-.454.175-1.243.359-2.414.415-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.17-.056-1.96-.24-2.414-.415a4.92 4.92 0 0 1-1.753-1.014 4.92 4.92 0 0 1-1.014-1.753c-.175-.454-.359-1.243-.415-2.414C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.056-1.17.24-1.96.415-2.414a4.92 4.92 0 0 1 1.014-1.753 4.92 4.92 0 0 1 1.753-1.014c.454-.175 1.243-.359 2.414-.415C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.782.13 4.812.308 4.03.572a6.937 6.937 0 0 0-2.503 1.648A6.937 6.937 0 0 0 .572 4.03c-.264.782-.442 1.752-.5 3.022C.014 8.332 0 8.741 0 12s.014 3.668.072 4.948c.058 1.27.236 2.24.5 3.022a6.937 6.937 0 0 0 1.648 2.503 6.937 6.937 0 0 0 2.503 1.648c.782.264 1.752.442 3.022.5C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.27-.058 2.24-.236 3.022-.5a6.937 6.937 0 0 0 2.503-1.648 6.937 6.937 0 0 0 1.648-2.503c.264-.782.442-1.752.5-3.022C23.986 15.668 24 15.259 24 12s-.014-3.668-.072-4.948c-.058-1.27-.236-2.24-.5-3.022a6.937 6.937 0 0 0-1.648-2.503 6.937 6.937 0 0 0-2.503-1.648c-.782-.264-1.752-.442-3.022-.5C15.668.014 15.259 0 12 0z"/></svg>
+    Instagram
+  </a>
 </div>
 
-</div>
+<script>
+  // Create floating particles dynamically
+  const particlesContainer = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.width = p.style.height = Math.random() * 8 + 4 + 'px';
+    p.style.animationDuration = (5 + Math.random() * 10) + 's';
+    particlesContainer.appendChild(p);
+  }
+</script>
 
 </body>
 </html>
