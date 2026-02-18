@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RHUTHVIK BANTU - Portfolio</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-<style>
+<title>RHUTHVIK BANTU - All-in-One Portal</title><!-- Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/><style>
 /* ===== Reset & Base ===== */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
 body,html{width:100%;height:100%;overflow-x:hidden;scroll-behavior:smooth;}
@@ -19,100 +10,51 @@ a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 
 /* ===== Preloader ===== */
-#preloader{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:2.5rem;font-weight:900;color:white;
-  background:linear-gradient(135deg,#FF416C,#FF4B2B);
-  z-index:9999;animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:1;}
-  50%{transform:scale(1.1);opacity:0.8;}
-}
+#preloader{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:900;color:white;background:linear-gradient(135deg,#FF416C,#FF4B2B);z-index:9999;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.1);opacity:0.8;}}
 
 /* ===== Body Background ===== */
-body{
-  background:linear-gradient(45deg,#1D2671,#C33764);
-  animation:backgroundAnim 15s infinite alternate;
-}
-@keyframes backgroundAnim{
-  0%{background:linear-gradient(45deg,#1D2671,#C33764);}
-  25%{background:linear-gradient(45deg,#11998e,#38ef7d);}
-  50%{background:linear-gradient(45deg,#FF416C,#FF4B2B);}
-  75%{background:linear-gradient(45deg,#373B44,#4286f4);}
-  100%{background:linear-gradient(45deg,#1D2671,#C33764);}
-}
+body{background:linear-gradient(45deg,#1D2671,#C33764);animation:backgroundAnim 15s infinite alternate;}
+@keyframes backgroundAnim{0%{background:linear-gradient(45deg,#1D2671,#C33764);}25%{background:linear-gradient(45deg,#11998e,#38ef7d);}50%{background:linear-gradient(45deg,#FF416C,#FF4B2B);}75%{background:linear-gradient(45deg,#373B44,#4286f4);}100%{background:linear-gradient(45deg,#1D2671,#C33764);}}
 
 /* ===== Main Section ===== */
-.main{
-  display:none;flex-direction:column;align-items:center;justify-content:flex-start;
-  min-height:100vh;padding:20px;text-align:center;animation:fadeIn 2s forwards;
-}
+.main{display:none;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh;padding:20px;text-align:center;animation:fadeIn 2s forwards;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
 /* ===== Logo ===== */
-.logo{
-  width:150px;height:150px;margin:20px 0;
-  animation:logoEntry 1.5s ease forwards,logoGlow 2s infinite alternate;
-}
-@keyframes logoEntry{
-  0%{transform:scale(0) translateY(-30px);opacity:0;}
-  100%{transform:scale(1) translateY(0);opacity:1;}
-}
-@keyframes logoGlow{
-  0%{box-shadow:0 0 5px #FF416C;}
-  50%{box-shadow:0 0 15px #FF4B2B,0 0 30px #FF416C;}
-  100%{box-shadow:0 0 5px #FF416C;}
-}
+.logo{width:150px;height:150px;margin:20px 0;animation:logoEntry 1.5s ease forwards,logoGlow 2s infinite alternate;}
+@keyframes logoEntry{0%{transform:scale(0) translateY(-30px);opacity:0;}100%{transform:scale(1) translateY(0);opacity:1;}}
+@keyframes logoGlow{0%{box-shadow:0 0 5px #FF416C;}50%{box-shadow:0 0 15px #FF4B2B,0 0 30px #FF416C;}100%{box-shadow:0 0 5px #FF416C;}}
 
 /* ===== Welcome Text ===== */
-.welcome{
-  font-size:3rem;font-weight:900;margin-bottom:30px;
-  animation:colorShift 4s infinite alternate;word-wrap:break-word;
-}
-@keyframes colorShift{
-  0%{color:#FF416C;text-shadow:0 0 5px #FF416C;}
-  25%{color:#FF4B2B;text-shadow:0 0 10px #FF4B2B;}
-  50%{color:#F9D423;text-shadow:0 0 10px #F9D423;}
-  75%{color:#1FA2FF;text-shadow:0 0 10px #1FA2FF;}
-  100%{color:#FF416C;text-shadow:0 0 5px #FF416C;}
-}
+.welcome{font-size:3rem;font-weight:900;margin-bottom:30px;animation:colorShift 4s infinite alternate;word-wrap:break-word;}
+@keyframes colorShift{0%{color:#FF416C;text-shadow:0 0 5px #FF416C;}25%{color:#FF4B2B;text-shadow:0 0 10px #FF4B2B;}50%{color:#F9D423;text-shadow:0 0 10px #F9D423;}75%{color:#1FA2FF;text-shadow:0 0 10px #1FA2FF;}100%{color:#FF416C;text-shadow:0 0 5px #FF416C;}}
 
 /* ===== Social Icons ===== */
-.socials{display:flex;gap:40px;margin-bottom:50px;flex-wrap:wrap;justify-content:center;}
+.socials{display:flex;gap:30px;margin-bottom:50px;flex-wrap:wrap;justify-content:center;}
 .socials a{color:white;font-size:2.5rem;transition:transform 0.3s,color 0.3s;}
 .socials a:hover{color:#FF4B2B;transform:scale(1.3) rotate(-10deg);}
 
-/* ===== Portfolio ===== */
-.portfolio{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:50px;
-}
-.portfolio .card{
-  width:280px;background:rgba(255,255,255,0.1);padding:20px;border-radius:15px;
-  backdrop-filter:blur(10px);transition:transform 0.5s,box-shadow 0.5s;
-}
-.portfolio .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.5);
-}
-.portfolio .card img{border-radius:10px;margin-bottom:15px;}
-.portfolio .card h3{margin-bottom:10px;font-size:1.5rem;color:white;}
-.portfolio .card p{font-size:1rem;color:white;opacity:0.8;}
+/* ===== Sections ===== */
+.section{width:100%;padding:50px 20px;display:flex;flex-direction:column;align-items:center;gap:30px;}
+.section h2{font-size:2.5rem;color:white;text-shadow:0 0 10px black;}
+.section p{color:white;opacity:0.8;max-width:900px;text-align:center;}
+
+/* ===== Cards ===== */
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.card{width:250px;background:rgba(255,255,255,0.1);padding:20px;border-radius:15px;backdrop-filter:blur(10px);transition:transform 0.5s,box-shadow 0.5s;}
+.card:hover{transform:translateY(-10px);box-shadow:0 10px 25px rgba(0,0,0,0.5);}
+.card img{border-radius:10px;margin-bottom:10px;}
+.card h3{margin-bottom:10px;font-size:1.3rem;color:white;}
+.card p{font-size:0.9rem;color:white;opacity:0.8;}
+
+/* ===== Mini-Games ===== */
+.games iframe{border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.3);width:300px;height:400px;}
 
 /* ===== Chatbot ===== */
-#chatbotBtn{
-  position:fixed;bottom:20px;right:20px;background:#FF4B2B;color:white;
-  border:none;padding:15px;border-radius:50%;font-size:1.5rem;
-  cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:bounce 2s infinite;z-index:10000;
-}
+#chatbotBtn{position:fixed;bottom:20px;right:20px;background:#FF4B2B;color:white;border:none;padding:15px;border-radius:50%;font-size:1.5rem;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.3);animation:bounce 2s infinite;z-index:10000;}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-
-#chatContainer{
-  position:fixed;bottom:70px;right:15px;width:320px;max-width:90%;
-  height:450px;max-height:80%;background:white;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.3);
-  display:none;flex-direction:column;overflow:hidden;z-index:10000;
-}
+#chatContainer{position:fixed;bottom:70px;right:15px;width:320px;max-width:90%;height:450px;max-height:80%;background:white;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.3);display:none;flex-direction:column;overflow:hidden;z-index:10000;}
 #chatHeader{background:#FF4B2B;color:white;padding:12px;font-weight:bold;text-align:center;}
 #chatBody{flex:1;padding:10px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;}
 .userMsg{align-self:flex-end;background:#FF4B2B;color:white;padding:6px 10px;border-radius:12px;max-width:70%;}
@@ -121,96 +63,65 @@ body{
 #chatInput input{flex:1;padding:8px;border:none;border-top:1px solid #ddd;}
 #chatInput button{padding:8px;background:#FF4B2B;color:white;border:none;cursor:pointer;}
 
-/* ===== Contact Form ===== */
-.contact{
-  max-width:600px;margin:0 auto 50px auto;padding:20px;background:rgba(255,255,255,0.1);
-  border-radius:15px;backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:15px;
-}
-.contact input,.contact textarea{
-  padding:12px;border:none;border-radius:10px;font-size:1rem;
-}
-.contact button{
-  padding:12px;background:#FF4B2B;color:white;border:none;font-weight:bold;font-size:1rem;cursor:pointer;
-  border-radius:10px;transition:transform 0.3s;
-}
-.contact button:hover{transform:scale(1.05);}
-
 /* ===== Footer ===== */
-footer{
-  text-align:center;color:white;padding:20px;font-size:0.9rem;background:rgba(0,0,0,0.2);
-  backdrop-filter:blur(5px);
-}
+footer{text-align:center;color:white;padding:20px;font-size:0.9rem;background:rgba(0,0,0,0.2);backdrop-filter:blur(5px);}
 
 /* ===== Animations ===== */
-@keyframes logoSpin{
-  0%{transform:rotate(0);}
-  100%{transform:rotate(360deg);}
-}
-@keyframes fadeUp{
-  0%{opacity:0;transform:translateY(30px);}
-  100%{opacity:1;transform:translateY(0);}
-}
+@keyframes logoSpin{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
 
 /* ===== Media Queries ===== */
-@media(max-width:768px){
-  .welcome{font-size:2.2rem;}
-  .socials a{font-size:2rem;}
-  .portfolio .card{width:90%;}
-}
-</style>
-</head>
-<body>
-
-<!-- Preloader -->
-<div id="preloader">WELCOME</div>
-
-<!-- Main Section -->
-<div class="main">
-  <!-- Logo -->
+@media(max-width:768px){.welcome{font-size:2.2rem;}.socials a{font-size:2rem;}.cards .card{width:90%;}.games iframe{width:90%;height:350px;}}
+</style></head>
+<body><!-- Preloader --><div id="preloader">WELCOME</div><!-- Main Content --><div class="main">
   <img src="logo.png" alt="RHUTHVIK BANTU" class="logo">
-
-  <!-- Welcome -->
-  <div class="welcome">WELCOME TO MY WORLD</div>
-
-  <!-- Socials -->
+  <div class="welcome">WELCOME TO THE ULTIMATE HUB</div>
   <div class="socials">
-    <a href="https://youtube.com/@rhuthvikbantu?si=6l4pyRvLgYdPZB1r" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/rhuthvik_bantu?igsh=dXprdHYxdmt1YzRh" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-
-  <!-- Portfolio -->
-  <div class="portfolio">
-    <div class="card">
-      <img src="project1.jpg" alt="Project 1">
-      <h3>Project One</h3>
-      <p>This is an amazing project using HTML, CSS, and JS with beautiful animations.</p>
+    <a href="#"><i class="fab fa-discord"></i></a>
+  </div>  <!-- YouTube / Instagram Section -->  <div class="section" id="feeds">
+    <h2>Social Feeds</h2>
+    <p>Watch the latest posts from Instagram, YouTube, Twitter, all in one place.</p>
+    <div class="cards">
+      <div class="card"><h3>YouTube Feed</h3><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+      <div class="card"><h3>Instagram Feed</h3><iframe src="https://www.instagram.com/p/Cs1q6YbC3Lo/embed" allowfullscreen></iframe></div>
+      <div class="card"><h3>Twitter Feed</h3><iframe src="https://twitframe.com/show?url=https://twitter.com/Twitter/status/123" allowfullscreen></iframe></div>
     </div>
-    <div class="card">
-      <img src="project2.jpg" alt="Project 2">
-      <h3>Project Two</h3>
-      <p>A creative portfolio website with dynamic content and interactive elements.</p>
+  </div>  <!-- Mini-Games Section -->  <div class="section" id="games">
+    <h2>Play Mini Games</h2>
+    <p>Enjoy fun HTML5 games directly in your browser.</p>
+    <div class="cards games">
+      <iframe src="https://example.com/snake-game"></iframe>
+      <iframe src="https://example.com/quiz-game"></iframe>
+      <iframe src="https://example.com/clicker-game"></iframe>
     </div>
-    <div class="card">
-      <img src="project3.jpg" alt="Project 3">
-      <h3>Project Three</h3>
-      <p>Advanced web animations and AI chatbot integration included.</p>
+  </div>  <!-- Movies / Streaming Section -->  <div class="section" id="movies">
+    <h2>Watch Movies & Shows</h2>
+    <p>Legal trailers and streaming links in multiple languages.</p>
+    <div class="cards">
+      <div class="card"><h3>Movie 1</h3><iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe></div>
+      <div class="card"><h3>Movie 2</h3><iframe src="https://www.youtube.com/embed/example2" allowfullscreen></iframe></div>
+      <div class="card"><h3>Movie 3</h3><iframe src="https://www.youtube.com/embed/example3" allowfullscreen></iframe></div>
     </div>
-  </div>
-
-  <!-- Contact Form -->
-  <div class="contact">
+  </div>  <!-- Live News Section -->  <div class="section" id="live">
+    <h2>Live News & Streams</h2>
+    <p>Keep up-to-date with live broadcasts from around the world.</p>
+    <div class="cards">
+      <div class="card"><h3>News Live 1</h3><iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID" allowfullscreen></iframe></div>
+      <div class="card"><h3>News Live 2</h3><iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID" allowfullscreen></iframe></div>
+    </div>
+  </div>  <!-- Contact / Feedback -->  <div class="section contact" id="contact">
+    <h2>Contact / Feedback</h2>
     <input type="text" placeholder="Your Name">
     <input type="email" placeholder="Your Email">
     <textarea rows="5" placeholder="Your Message"></textarea>
     <button>Send Message</button>
   </div>
+</div><!-- Chatbot --><button id="chatbotBtn"><i class="fas fa-comment-dots"></i></button>
 
-</div>
-
-<!-- Chatbot -->
-<button id="chatbotBtn"><i class="fas fa-comment-dots"></i></button>
 <div id="chatContainer">
   <div id="chatHeader">Chat with me</div>
   <div id="chatBody"></div>
@@ -218,20 +129,9 @@ footer{
     <input type="text" id="userInput" placeholder="Type a message..." />
     <button id="sendBtn">Send</button>
   </div>
-</div>
-
-<!-- Footer -->
-<footer>© 2026 RHUTHVIK BANTU | All rights reserved</footer>
-
-<!-- Scripts -->
-<script>
+</div><!-- Footer --><footer>© 2026 RHUTHVIK BANTU | All rights reserved</footer><!-- Scripts --><script>
 // Preloader
-window.addEventListener("load",()=>{
-  setTimeout(()=>{
-    document.getElementById("preloader").style.display="none";
-    document.querySelector(".main").style.display="flex";
-  },2000);
-});
+window.addEventListener("load",()=>{setTimeout(()=>{document.getElementById("preloader").style.display="none";document.querySelector(".main").style.display="flex";},2000);});
 
 // Chatbot toggle
 const chatBtn=document.getElementById("chatbotBtn");
@@ -242,41 +142,7 @@ chatBtn.addEventListener("click",()=>{chatContainer.style.display=chatContainer.
 const chatBody=document.getElementById("chatBody");
 const userInput=document.getElementById("userInput");
 const sendBtn=document.getElementById("sendBtn");
-
-async function sendMessage(){
-  const message=userInput.value.trim();
-  if(!message) return;
-  const userMsgDiv=document.createElement("div");
-  userMsgDiv.className="userMsg";userMsgDiv.textContent=message;
-  chatBody.appendChild(userMsgDiv);chatBody.scrollTop=chatBody.scrollHeight;
-  userInput.value="";
-  const botMsgDiv=document.createElement("div");
-  botMsgDiv.className="botMsg";botMsgDiv.textContent="Typing...";
-  chatBody.appendChild(botMsgDiv);chatBody.scrollTop=chatBody.scrollHeight;
-  try{
-    const response=await fetch("https://api.openai.com/v1/chat/completions",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "Authorization":"Bearer YOUR_OPENAI_API_KEY"
-      },
-      body: JSON.stringify({
-        model:"gpt-5-mini",
-        messages:[{role:"user",content:message}],
-        max_tokens:150
-      })
-    });
-    const data=await response.json();
-    botMsgDiv.textContent=data.choices[0].message.content;
-    chatBody.scrollTop=chatBody.scrollHeight;
-  }catch(err){
-    botMsgDiv.textContent="Sorry, something went wrong!";
-  }
-}
-
-sendBtn.addEventListener("click",sendMessage);
-userInput.addEventListener("keypress",(e)=>{if(e.key==="Enter")sendMessage();});
-</script>
-
-</body>
+async function sendMessage(){const message=userInput.value.trim();if(!message)return;const userMsgDiv=document.createElement("div");userMsgDiv.className="userMsg";userMsgDiv.textContent=message;chatBody.appendChild(userMsgDiv);chatBody.scrollTop=chatBody.scrollHeight;userInput.value="";const botMsgDiv=document.createElement("div");botMsgDiv.className="botMsg";botMsgDiv.textContent="Typing...";chatBody.appendChild(botMsgDiv);chatBody.scrollTop=chatBody.scrollHeight;try{const response=await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer YOUR_OPENAI_API_KEY"},body:JSON.stringify({model:"gpt-5-mini",messages:[{role:"user",content:message}],max_tokens:150})});const data=await response.json();botMsgDiv.textContent=data.choices[0].message.content;chatBody.scrollTop=chatBody.scrollHeight;}catch(err){botMsgDiv.textContent="Sorry, something went wrong!";}}
+sendBtn.addEventListener("click",sendMessage);userInput.addEventListener("keypress",(e)=>{if(e.key==="Enter")sendMessage();});
+</script></body>
 </html>
