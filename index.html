@@ -4,158 +4,156 @@
 <title>RHUTHVIK BANTU</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family: 'Orbitron', sans-serif;
 }
 
 body{
-background: radial-gradient(circle at top, #111 0%, #000 60%);
-color:white;
+background: radial-gradient(circle at top, #111 0%, #000 70%);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 overflow:hidden;
+color:white;
 }
 
-/* CINEMATIC DARK OVERLAY */
-body::after{
-content:"";
+/* WELCOME INTRO */
+#welcome{
 position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
-z-index:-1;
+font-size:40px;
+letter-spacing:8px;
+background:linear-gradient(90deg,#ff00cc,#3333ff,#00ffff,#ff00cc);
+background-size:400%;
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 3s linear infinite, fadeOut 4s forwards;
+animation-delay:0s,4s;
+}
+
+@keyframes shine{
+0%{background-position:0%}
+100%{background-position:400%}
+}
+
+@keyframes fadeOut{
+to{opacity:0; visibility:hidden;}
 }
 
 /* MAIN CONTAINER */
 .container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
 text-align:center;
-width:90%;
-max-width:600px;
+opacity:0;
+animation:showContent 2s forwards;
+animation-delay:4.5s;
 }
 
-/* ROYAL RED 3D TEXT */
+@keyframes showContent{
+to{opacity:1;}
+}
+
+/* PREMIUM NAME COLOR */
 .title{
-font-size:65px;
+font-size:70px;
 font-weight:900;
 letter-spacing:6px;
-color:#b30000;
-text-shadow:
-0 2px 0 #660000,
-0 4px 10px rgba(255,0,0,0.4),
-0 8px 25px rgba(255,0,0,0.6);
-animation:fadeIn 2s ease forwards;
+background:linear-gradient(90deg,#7f00ff,#00e5ff,#7f00ff);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:moveGradient 5s linear infinite;
+text-shadow:0 0 20px rgba(0,229,255,0.5);
+}
+
+@keyframes moveGradient{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* Decorative underline */
+.line{
+width:200px;
+height:3px;
+margin:20px auto;
+background:linear-gradient(90deg,#7f00ff,#00e5ff);
+box-shadow:0 0 15px #00e5ff;
+animation:expand 2s ease forwards;
+}
+
+@keyframes expand{
+from{width:0;}
+to{width:200px;}
 }
 
 /* Subtitle */
 .subtitle{
 margin-top:20px;
-font-size:18px;
 color:#cccccc;
 letter-spacing:2px;
-animation:slideUp 2s ease forwards;
+font-size:16px;
 }
 
-/* Buttons */
-.btn{
-display:block;
-margin:25px auto;
-padding:15px;
-border-radius:40px;
-font-size:18px;
-font-weight:bold;
-text-decoration:none;
+/* Premium Icon Buttons */
+.icons{
+margin-top:40px;
+}
+
+.icons a{
+margin:0 20px;
+font-size:35px;
 color:white;
-background:linear-gradient(45deg,#990000,#cc0000);
-box-shadow:0 10px 30px rgba(255,0,0,0.3);
-transition:0.3s;
+transition:0.4s;
 }
 
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 40px rgba(255,0,0,0.6);
+.icons a:hover{
+transform:scale(1.2);
 }
 
-/* Subscriber */
-.subs{
-margin-top:30px;
-font-size:22px;
-color:#ff3333;
-font-weight:bold;
+/* YouTube */
+.youtube:hover{
+color:#ff0000;
+text-shadow:0 0 20px #ff0000;
 }
 
-/* Animations */
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(-30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes slideUp{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-/* Loading Screen */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:25px;
-letter-spacing:4px;
-color:#990000;
-animation:fadeOut 2s forwards;
-animation-delay:2s;
-z-index:9999;
-}
-
-@keyframes fadeOut{
-to{opacity:0; visibility:hidden;}
+/* Instagram */
+.instagram:hover{
+color:#e1306c;
+text-shadow:0 0 20px #e1306c;
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader">WELCOME</div>
+<div id="welcome">WELCOME</div>
 
 <div class="container">
+
 <h1 class="title">RHUTHVIK BANTU</h1>
+<div class="line"></div>
 
 <p class="subtitle">
 Daily Viral Rankings | Cricket | Celebrities | World Trends
 </p>
 
-<a href="https://youtube.com" class="btn">YouTube</a>
-<a href="https://instagram.com" class="btn">Instagram</a>
+<div class="icons">
+<a href="https://youtube.com" target="_blank" class="youtube">
+<i class="fab fa-youtube"></i>
+</a>
 
-<div class="subs">
-Subscribers: <span id="count">31500</span>
+<a href="https://instagram.com" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i>
+</a>
 </div>
 
 </div>
-
-<script>
-/* Smooth Counter */
-let count = 30000;
-let target = 31500;
-
-let counter = setInterval(()=>{
-count += 50;
-document.getElementById("count").innerText = count;
-if(count >= target){
-clearInterval(counter);
-}
-},40);
-</script>
 
 </body>
 </html>
