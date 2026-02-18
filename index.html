@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hruthvik Top 5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .btn {
+            padding: 15px 30px;
+            margin: 20px;
+            background: #ff004f;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #ff004f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Hruthvik Top 5</h1>
+    <p>Daily Top 5 Videos | Cricket | Celebrities | World Trends</p>
+
+    <button class="btn" onclick="window.location.href='https://youtube.com'">YouTube</button>
+    <button class="btn" onclick="window.location.href='https://instagram.com'">Instagram</button>
+</body>
+</html>
