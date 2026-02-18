@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RHUTHVIK BANTU Top 5</title>
+<title>RHUTHVIK BANTU | Top 5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -9,45 +9,42 @@
 body {
   margin:0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #1a1a1a, #2c2c2c, #000000);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
+  background: radial-gradient(circle at top, #1a1a1a, #000000);
   color:white;
   text-align:center;
+  overflow:hidden;
 }
 
-@keyframes gradientBG {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
+/* GOLD SHINE EFFECT */
 h1 {
   margin-top:120px;
-  font-size:55px;
+  font-size:60px;
   font-weight:bold;
-  letter-spacing:4px;
-  color: gold;
-  text-shadow: 
-      0 0 5px gold,
-      0 0 10px gold,
-      0 0 20px gold,
-      0 0 40px #ffcc00;
-  animation: fadeSlide 2s ease forwards;
+  background: linear-gradient(90deg, gold, white, gold);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite, fadeSlide 2s ease forwards;
   opacity:0;
 }
 
+@keyframes shine {
+  0% {background-position: -200%;}
+  100% {background-position: 200%;}
+}
+
 @keyframes fadeSlide {
-  0% {opacity:0; transform: translateY(-40px);}
+  0% {opacity:0; transform: translateY(-50px);}
   100% {opacity:1; transform: translateY(0);}
 }
 
 p {
-  margin-top:20px;
   font-size:18px;
-  color:#ddd;
+  color:#ccc;
+  margin-top:20px;
 }
 
+/* BUTTONS */
 .btn {
   padding:15px 35px;
   margin:20px;
@@ -62,8 +59,31 @@ p {
 }
 
 .btn:hover {
-  background:white;
   transform: scale(1.1);
+  background:white;
+}
+
+/* PARTICLES */
+.particle {
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:gold;
+  border-radius:50%;
+  opacity:0.7;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+
+/* COUNTER */
+.counter-box {
+  margin-top:40px;
+  font-size:28px;
+  color:gold;
 }
 
 </style>
@@ -75,6 +95,10 @@ p {
 
 <p>Daily Viral Rankings | Cricket | Celebrities | World Trends</p>
 
+<div class="counter-box">
+Subscribers: <span id="counter">0</span>+
+</div>
+
 <button class="btn" onclick="window.location.href='https://youtube.com'">
 YouTube
 </button>
@@ -82,6 +106,32 @@ YouTube
 <button class="btn" onclick="window.location.href='https://instagram.com'">
 Instagram
 </button>
+
+<script>
+
+/* SUBSCRIBER COUNTER ANIMATION */
+let count = 0;
+let target = 10000; // change this number anytime
+let speed = 20;
+
+let counter = setInterval(() => {
+  count += 100;
+  document.getElementById("counter").innerText = count;
+  if(count >= target){
+    clearInterval(counter);
+  }
+}, speed);
+
+/* GENERATE PARTICLES */
+for(let i=0;i<40;i++){
+  let particle = document.createElement("div");
+  particle.className = "particle";
+  particle.style.left = Math.random()*100 + "vw";
+  particle.style.animationDuration = (5 + Math.random()*5) + "s";
+  document.body.appendChild(particle);
+}
+
+</script>
 
 </body>
 </html>
