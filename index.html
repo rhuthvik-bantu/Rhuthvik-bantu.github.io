@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RHUTHVIK BANTU | Viral Premium Hub</title>
+<title>RHUTHVIK BANTU | Premium Hub</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -15,40 +15,42 @@
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{
   font-family:'Roboto',sans-serif;
-  background: linear-gradient(145deg,#1c1c1c,#2c2c2c);
+  background:#1c1c1c;
   color:#f5f5f5;
   overflow-x:hidden;
 }
-.container{max-width:1400px;margin:auto;padding:50px 20px;}
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:0 20px;}
+.container{max-width:1600px;margin:auto;padding:50px 20px;}
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;}
 header h1{font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);color:#ffffff;margin-bottom:20px;}
-header h2{font-size:clamp(1.5rem,3vw,2rem);color:#cccccc;margin-bottom:40px;max-width:700px;line-height:1.4;}
-.socials{display:flex;justify-content:center;gap:40px;margin-bottom:50px;}
+header h2{font-size:clamp(1.5rem,3vw,2rem);color:#cccccc;margin-bottom:40px;max-width:800px;line-height:1.4;}
+.socials{display:flex;justify-content:center;gap:30px;margin-bottom:50px;}
 .socials a{font-size:2.5rem;color:#ffffff;transition: all 0.3s;}
 .socials a:hover{color:#ff6b6b;transform:scale(1.2);}
-section{padding:100px 20px;min-height:70vh;position:relative;opacity:0;transform:translateY(50px);transition: all 1s ease-out;}
+.sticky-btn{position:fixed;right:30px;bottom:30px;z-index:999;background:#ff6b6b;color:#fff;border:none;padding:15px 25px;font-size:1rem;border-radius:50px;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,0.3);transition:all 0.3s;}
+.sticky-btn:hover{transform:scale(1.05);}
+section{padding:100px 20px;min-height:70vh;opacity:0;transform:translateY(50px);transition: all 1s ease-out;}
 .active{opacity:1;transform:translateY(0);}
 .section-title{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);color:#ffffff;margin-bottom:30px;}
-.section-content{font-size:clamp(1rem,1.8vw,1.2rem);max-width:900px;margin:auto;line-height:1.8;color:#dddddd;margin-bottom:40px;}
+.section-content{font-size:clamp(1rem,1.8vw,1.2rem);max-width:1000px;margin:auto;line-height:1.8;color:#dddddd;margin-bottom:40px;}
 .video-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
-.video-container iframe,.video-container .reel{width:400px;height:225px;border-radius:12px;border:none;background:#1c1c1c;transition: transform 0.3s, box-shadow 0.3s;}
+.video-container iframe,.video-container .reel{width:450px;height:250px;border-radius:12px;border:none;background:#111;transition:transform 0.3s, box-shadow 0.3s;}
 .video-container iframe:hover,.video-container .reel:hover{transform:scale(1.05);box-shadow:0 0 30px #ff6b6b;}
-.reel{display:flex;justify-content:center;align-items:center;font-size:1rem;color:#ffffff;cursor:pointer;text-align:center;position:relative;}
-.reel img{width:100%;height:100%;border-radius:12px;object-fit:cover;}
+.reel iframe{border-radius:12px;}
 .counter-container{display:flex;justify-content:center;gap:80px;margin-top:50px;}
 .counter{font-size:2.5rem;font-weight:700;text-align:center;}
 .counter span{display:block;font-size:1rem;font-weight:400;color:#aaaaaa;}
-.cta-btn{margin-top:30px;padding:18px 50px;font-size:1.1rem;border-radius:50px;border:2px solid #ffffff;color:#ffffff;background:transparent;font-weight:500;cursor:pointer;transition: all 0.3s;}
+.cta-btn{margin-top:30px;padding:18px 50px;font-size:1.1rem;border-radius:50px;border:2px solid #ffffff;color:#ffffff;background:transparent;font-weight:500;cursor:pointer;transition:all 0.3s;}
 .cta-btn:hover{background:#ff6b6b;border-color:#ff6b6b;transform:scale(1.05);}
 footer{padding:20px;text-align:center;color:#aaaaaa;background: rgba(0,0,0,0.2);}
-@media(max-width:768px){header h1{font-size:3rem;}header h2{font-size:1.2rem;}.socials a{font-size:2rem;}.video-container iframe,.video-container .reel{width:90%;height:200px;}}
+@media(max-width:1024px){.video-container iframe,.video-container .reel{width:90%;height:220px;}}
+@media(max-width:768px){header h1{font-size:3rem;}header h2{font-size:1.2rem;}.socials a{font-size:2rem;}}
 </style>
 </head>
 <body>
 
 <header class="container">
 <h1>RHUTHVIK BANTU</h1>
-<h2>Welcome! Explore my YouTube videos and Instagram reels with premium content made just for you.</h2>
+<h2>Watch my YouTube videos and Instagram reels directly here — premium content, smooth playback, all in one place.</h2>
 
 <div class="socials">
 <a href="https://www.youtube.com/@rhuthvikbantu" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -56,25 +58,32 @@ footer{padding:20px;text-align:center;color:#aaaaaa;background: rgba(0,0,0,0.2);
 <a href="https://www.instagram.com/sandalwood_star_fc" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="mailto:contact@rhuthvik.com"><i class="fas fa-envelope"></i></a>
 </div>
-
 <button class="cta-btn" onclick="alert('Thanks for following!')">Follow Now</button>
 </header>
 
+<button class="sticky-btn" onclick="alert('Subscribed & Followed!')">Subscribe & Follow</button>
+
 <section>
 <h2 class="section-title">About Me</h2>
-<p class="section-content">I am RHUTHVIK BANTU, creating high-quality, premium content for YouTube and Instagram. Follow me for trending videos, reels, and updates that entertain and inspire.</p>
+<p class="section-content">I am RHUTHVIK BANTU, creating premium content for YouTube and Instagram. Enjoy trending videos and reels directly from this site — smooth, crisp, and fully responsive.</p>
 </section>
 
 <section>
-<h2 class="section-title">My Videos & Reels</h2>
+<h2 class="section-title">YouTube Videos</h2>
 <div class="video-container">
-<!-- YouTube embeds autoplay muted -->
-<iframe src="https://www.youtube.com/embed/GPEoD2V4KEI?autoplay=0&mute=1" title="YouTube video 1" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/q9Tt12ZXcXE?autoplay=0&mute=1" title="YouTube video 2" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/GPEoD2V4KEI?autoplay=0&mute=1" title="YouTube Video 1" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/q9Tt12ZXcXE?autoplay=0&mute=1" title="YouTube Video 2" allowfullscreen></iframe>
+</div>
+</section>
 
-<!-- Instagram Reels previews -->
-<div class="reel" onclick="window.open('https://www.instagram.com/reel/DKfOOQGhGIU/?igsh=MTY3em1oZ2gwcmM0MA==', '_blank')">
-  <img src="https://via.placeholder.com/400x225.png?text=Instagram+Reel" alt="Reel 1">
+<section>
+<h2 class="section-title">Instagram Reels</h2>
+<div class="video-container">
+<div class="reel">
+<iframe src="https://www.instagram.com/reel/DKfOOQGhGIU/embed" allowfullscreen></iframe>
+</div>
+<div class="reel">
+<iframe src="https://www.instagram.com/sandalwood_star_fc/embed" allowfullscreen></iframe>
 </div>
 </div>
 </section>
@@ -100,21 +109,35 @@ window.addEventListener('scroll',()=>{
   });
 });
 
-// Counter animation
-function animateCounter(id,target,speed){
-  const el=document.getElementById(id);
-  let count=0;
-  let increment=Math.ceil(target/speed);
-  function update(){
-    count+=increment;
-    if(count>target) count=target;
-    el.firstChild.textContent=count;
-    if(count<target) requestAnimationFrame(update);
+// --- YouTube Real-Time Subscribers ---
+async function updateYouTubeSubscribers(){
+  const channelId = 'YOUR_CHANNEL_ID'; // Replace with your YouTube channel ID
+  const apiKey = 'YOUR_YOUTUBE_API_KEY'; // Replace with your API Key
+  try{
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`);
+    const data = await response.json();
+    const subs = data.items[0].statistics.subscriberCount;
+    document.getElementById('ytCounter').textContent = subs;
+  }catch(err){
+    console.error('YouTube API Error', err);
   }
-  update();
 }
-animateCounter('ytCounter',120000,200);
-animateCounter('instaCounter',85000,200);
+updateYouTubeSubscribers();
+setInterval(updateYouTubeSubscribers,300000); // updates every 5 mins
+
+// --- Instagram Real-Time Followers ---
+async function updateInstagramFollowers(){
+  const accessToken = 'YOUR_INSTAGRAM_ACCESS_TOKEN'; // Replace with your Instagram token
+  try{
+    const response = await fetch(`https://graph.instagram.com/me?fields=followers_count&access_token=${accessToken}`);
+    const data = await response.json();
+    document.getElementById('instaCounter').textContent = data.followers_count;
+  }catch(err){
+    console.error('Instagram API Error', err);
+  }
+}
+updateInstagramFollowers();
+setInterval(updateInstagramFollowers,300000); // updates every 5 mins
 </script>
 
 </body>
