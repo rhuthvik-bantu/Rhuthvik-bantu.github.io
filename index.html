@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rhuthvik Bantu - Viral Shorts Creator | Digital Strategist | Cinematic Editor">
+<meta name="description" content="Rhuthvik Bantu - Viral Shorts Creator & Cinematic Content Strategist">
 <title>Rhuthvik Bantu | Creator Empire</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
 --primary:#00f7ff;
---secondary:#ff00c8;
---dark:#0a0a0a;
---card:rgba(255,255,255,0.05);
+--secondary:#ff004c;
+--dark:#080808;
 }
 
 *{
@@ -30,18 +29,39 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Smooth Scroll Progress */
-#progress{
+/* ===== CINEMATIC INTRO ===== */
+#intro{
 position:fixed;
-top:0;
-left:0;
-height:4px;
-background:linear-gradient(90deg,var(--primary),var(--secondary));
-width:0%;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+align-items:center;
+justify-content:center;
 z-index:9999;
+animation:fadeOut 1.5s ease 3s forwards;
 }
 
-/* NAV */
+.intro-text{
+font-size:clamp(28px,6vw,70px);
+font-weight:800;
+letter-spacing:4px;
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+-webkit-background-clip:text;
+color:transparent;
+animation:zoomIn 2s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* ===== NAVBAR ===== */
 nav{
 position:fixed;
 width:100%;
@@ -56,7 +76,6 @@ z-index:1000;
 
 .logo{
 font-weight:800;
-font-size:22px;
 color:var(--primary);
 }
 
@@ -69,7 +88,6 @@ list-style:none;
 nav ul li a{
 text-decoration:none;
 color:white;
-font-weight:500;
 transition:0.3s;
 }
 
@@ -83,7 +101,7 @@ font-size:28px;
 cursor:pointer;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 min-height:100vh;
 display:flex;
@@ -95,7 +113,7 @@ padding:0 8%;
 }
 
 .hero h1{
-font-size:clamp(36px,6vw,80px);
+font-size:clamp(36px,6vw,90px);
 font-weight:800;
 background:linear-gradient(90deg,var(--primary),var(--secondary));
 -webkit-background-clip:text;
@@ -103,17 +121,17 @@ color:transparent;
 }
 
 .hero p{
-margin-top:25px;
+margin-top:20px;
 max-width:800px;
-font-size:clamp(16px,2vw,22px);
 color:#ccc;
+font-size:clamp(16px,2vw,22px);
 }
 
 .cta{
 margin-top:40px;
 display:flex;
-flex-wrap:wrap;
 gap:20px;
+flex-wrap:wrap;
 justify-content:center;
 }
 
@@ -124,25 +142,17 @@ border:none;
 cursor:pointer;
 font-weight:600;
 transition:0.4s;
-font-size:15px;
 }
 
-.primary-btn{
-background:var(--primary);
-color:black;
-}
-
-.secondary-btn{
-background:var(--secondary);
-color:white;
-}
+.primary{background:var(--primary);color:black;}
+.secondary{background:var(--secondary);color:white;}
 
 .btn:hover{
 transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,247,255,0.4);
+box-shadow:0 10px 25px rgba(0,247,255,0.5);
 }
 
-/* SECTION */
+/* ===== SECTIONS ===== */
 section{
 padding:120px 8%;
 }
@@ -154,7 +164,6 @@ margin-bottom:60px;
 color:var(--primary);
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -162,8 +171,7 @@ gap:30px;
 }
 
 .card{
-background:var(--card);
-backdrop-filter:blur(20px);
+background:rgba(255,255,255,0.05);
 padding:40px;
 border-radius:20px;
 transition:0.4s;
@@ -175,28 +183,35 @@ transform:translateY(-10px) scale(1.03);
 box-shadow:0 20px 40px rgba(0,247,255,0.3);
 }
 
-/* TIMELINE */
-.timeline{
-border-left:3px solid var(--primary);
-padding-left:20px;
+/* ===== VIDEO EMBED ===== */
+.video-container{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:20px;
 }
 
-.timeline div{
-margin-bottom:25px;
+.video-container iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
 }
 
-/* CONTACT */
+/* ===== CONTACT ===== */
 .contact{
 max-width:600px;
 margin:auto;
 }
 
-input,textarea{
+input{
 width:100%;
 padding:15px;
 margin:10px 0;
-border:none;
 border-radius:10px;
+border:none;
 background:#1a1a1a;
 color:white;
 }
@@ -209,7 +224,6 @@ border-radius:50px;
 border:none;
 cursor:pointer;
 font-weight:600;
-transition:0.3s;
 }
 
 .submit:hover{
@@ -217,15 +231,15 @@ background:var(--secondary);
 color:white;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
-padding:40px 20px;
+padding:40px;
 text-align:center;
 background:#000;
 color:#888;
 }
 
-/* RESPONSIVE NAV */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 nav ul{
 position:absolute;
@@ -233,91 +247,78 @@ top:70px;
 right:0;
 background:black;
 flex-direction:column;
-width:220px;
 padding:20px;
 display:none;
 }
-nav ul.active{
-display:flex;
-}
-.menu{
-display:block;
-}
+nav ul.active{display:flex;}
+.menu{display:block;}
 }
 </style>
 </head>
 
 <body>
 
-<div id="progress"></div>
+<div id="intro">
+<div class="intro-text">RHUTHVIK BANTU</div>
+</div>
 
 <nav>
 <div class="logo">RHUTHVIK</div>
 <ul id="navLinks">
 <li><a href="#">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#journey">Journey</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#tools">Tools</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <div class="menu" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div class="hero">
-<h1>Rhuthvik Bantu</h1>
-<p>Building a Digital Creator Empire through viral storytelling, cinematic edits, and powerful content strategy.</p>
+<h1>Watch. Grow. Dominate.</h1>
+<p>High-energy viral shorts & cinematic storytelling built to entertain and inspire.</p>
+
 <div class="cta">
 <a href="https://youtube.com/@rhuthvikbantu" target="_blank">
-<button class="btn primary-btn">YouTube</button>
+<button class="btn primary">Subscribe on YouTube</button>
 </a>
 <a href="https://instagram.com/rhuthvik_bantu" target="_blank">
-<button class="btn secondary-btn">Instagram</button>
+<button class="btn secondary">Follow on Instagram</button>
 </a>
 </div>
 </div>
 
-<section id="services">
-<h2 class="section-title">What I Do</h2>
-<div class="grid">
-<div class="card">🔥 Viral Shorts Production</div>
-<div class="card">🎬 Cinematic Video Editing</div>
-<div class="card">🚀 Content Growth Strategy</div>
-<div class="card">📈 Personal Brand Development</div>
+<section id="videos">
+<h2 class="section-title">Featured Video</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
 </div>
 </section>
 
-<section id="journey">
-<h2 class="section-title">My Journey</h2>
-<div class="timeline">
-<div>2023 – Started Digital Content Creation</div>
-<div>2024 – Built Viral Shorts Strategy</div>
-<div>2025 – Expanded Across Platforms</div>
-<div>2026 – Scaling Creator Brand Globally</div>
+<section id="tools">
+<h2 class="section-title">Tools I Use</h2>
+<div class="grid">
+<div class="card">🎬 Editing Software</div>
+<div class="card">📱 Smartphone Setup</div>
+<div class="card">🎤 Microphone</div>
+<div class="card">💡 Lighting Setup</div>
 </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Let's Work Together</h2>
+<h2 class="section-title">Join My Growth Journey</h2>
 <div class="contact">
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button class="submit" onclick="alert('Message Sent 🚀')">Send Message</button>
+<input type="email" placeholder="Enter your email">
+<button class="submit">Join Now</button>
 </div>
 </section>
 
 <footer>
-© 2026 Rhuthvik Bantu | Creator Empire | All Rights Reserved
+© 2026 Rhuthvik Bantu | Creator Empire
 </footer>
 
 <script>
 function toggleMenu(){
 document.getElementById("navLinks").classList.toggle("active");
-}
-
-window.onscroll=function(){
-let winScroll=document.body.scrollTop||document.documentElement.scrollTop;
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-document.getElementById("progress").style.width=(winScroll/height)*100+"%";
 }
 </script>
 
