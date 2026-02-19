@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhuthvik Bantu | Viral Landing</title>
+<title>Rhuthvik Bantu | Viral Hub</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -12,85 +12,53 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Roboto Mono',monospace;background:#0f2027;color:#fff;overflow-x:hidden;}
 
-body {
-  font-family: 'Roboto Mono', monospace;
-  background: #0f2027;
-  color: #fff;
-  overflow-x:hidden;
-}
-
-/* Canvas for particle background */
-#particleCanvas { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+/* Particle background */
+#particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
 
 /* Container */
-.container { max-width: 1600px; margin:auto; padding:50px 20px; }
+.container{max-width:1600px;margin:auto;padding:50px 20px;}
 
-/* Header Section */
-header {
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  padding: 0 20px;
-}
+/* Header */
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:0 20px;}
+header h1{font-family:'Press Start 2P',cursive;font-size:clamp(2.5rem,6vw,6rem);background:linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#1f4037);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 20px #ff416c,0 0 40px #ff4b2b;animation:glowText 3s infinite alternate;margin-bottom:30px;}
+header h2{font-size:clamp(1.5rem,3.5vw,2.5rem);color:#fff;margin-bottom:50px;text-shadow:0 0 10px #fff;animation:slideUp 2s ease forwards;}
 
-header h1 {
-  font-family:'Press Start 2P', cursive;
-  font-size:clamp(2.5rem, 6vw, 6rem);
-  background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#1f4037);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow: 0 0 15px #ff416c,0 0 30px #ff4b2b;
-  animation: glowText 3s infinite alternate;
-  margin-bottom: 30px;
-}
-
-header h2 {
-  font-size:clamp(1.5rem, 3.5vw, 2.5rem);
-  color:#fff;
-  margin-bottom:50px;
-  text-shadow:0 0 5px #fff;
-  animation: slideUp 2s ease forwards;
-}
-
-/* Social Icons */
-.socials { display:flex; justify-content:center; gap:50px; margin-bottom:50px; }
-.socials a { font-size:3rem; color:#fff; transition: all 0.4s; }
-.socials a:hover { transform:scale(1.3) rotate(-10deg); color:#ff416c; }
+/* Socials */
+.socials{display:flex;justify-content:center;gap:50px;margin-bottom:50px;}
+.socials a{font-size:3rem;color:#fff;transition: all 0.4s;}
+.socials a:hover{transform:scale(1.3) rotate(-10deg);color:#ff416c;}
 
 /* Sections */
-section { padding:100px 20px; min-height:80vh; position:relative; }
-.section-title { font-family:'Press Start 2P', cursive; font-size:clamp(2rem,5vw,4rem);
-background: linear-gradient(90deg,#f9d423,#ff4b2b); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-text-shadow:0 0 15px #f9d423; opacity:0; transform:translateY(50px); transition: all 1s ease-out; margin-bottom:30px; }
-.section-content { font-size:clamp(1rem,2vw,1.5rem); max-width:1000px; margin:auto; line-height:1.8; opacity:0; transform:translateY(50px); transition: all 1s ease-out; }
+section{padding:100px 20px;min-height:80vh;position:relative;}
+.section-title{font-family:'Press Start 2P',cursive;font-size:clamp(2rem,5vw,4rem);background: linear-gradient(90deg,#f9d423,#ff4b2b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 15px #f9d423;opacity:0;transform:translateY(50px);transition: all 1s ease-out;margin-bottom:30px;}
+.section-content{font-size:clamp(1rem,2vw,1.5rem);max-width:1000px;margin:auto;line-height:1.8;opacity:0;transform:translateY(50px);transition: all 1s ease-out;}
 
-/* Buttons */
-.cta-btn { margin-top:30px; padding:20px 60px; font-size:1.2rem; border-radius:50px; border:2px solid #fff;
-color:#fff; background:transparent; font-weight:bold; cursor:pointer; transition: all 0.4s; }
-.cta-btn:hover { background:#ff416c; border-color:#ff416c; transform:scale(1.1) rotate(-2deg); }
+/* Embedded videos & reels */
+.video-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+.video-container iframe,.video-container .reel{width:400px;height:225px;border-radius:15px;transition: transform 0.4s;}
+.video-container iframe:hover,.video-container .reel:hover{transform:scale(1.05);box-shadow:0 0 40px #ff416c;}
+.reel{background:#111;display:flex;justify-content:center;align-items:center;font-size:1.5rem;color:#fff;cursor:pointer;text-align:center;}
 
-/* Fade-in active class */
-.active { opacity:1 !important; transform:translateY(0) !important; }
+/* Counters */
+.counter-container{display:flex;justify-content:center;gap:80px;margin-top:50px;}
+.counter{font-size:3rem;font-weight:bold;text-align:center;}
+.counter span{display:block;font-size:1.2rem;font-weight:normal;color:#ccc;}
+
+/* CTA Buttons */
+.cta-btn{margin-top:30px;padding:20px 60px;font-size:1.2rem;border-radius:50px;border:2px solid #fff;color:#fff;background:transparent;font-weight:bold;cursor:pointer;transition: all 0.4s;}
+.cta-btn:hover{background:#ff416c;border-color:#ff416c;transform:scale(1.1) rotate(-2deg);}
 
 /* Footer */
-footer { padding:20px; text-align:center; color:#ccc; background: rgba(0,0,0,0.3); }
+footer{padding:20px;text-align:center;color:#ccc;background: rgba(0,0,0,0.3);}
 
 /* Animations */
-@keyframes glowText {0%{text-shadow:0 0 15px #ff416c,0 0 30px #ff4b2b;}50%{text-shadow:0 0 40px #ff4b2b,0 0 60px #f9d423;}100%{text-shadow:0 0 20px #f9d423,0 0 40px #ff416c;}}
-@keyframes slideUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
-
-@media(max-width:768px){header h1{font-size:3rem;} header h2{font-size:1.5rem;} .socials a{font-size:2rem;}}
-@media(max-width:480px){header h1{font-size:2.2rem;} header h2{font-size:1.2rem;} .socials{gap:25px;}}
-
-/* Parallax effect for sections */
-section:nth-child(even) { background:rgba(255,255,255,0.05); }
+@keyframes glowText{0%{text-shadow:0 0 15px #ff416c,0 0 30px #ff4b2b;}50%{text-shadow:0 0 40px #ff4b2b,0 0 60px #f9d423;}100%{text-shadow:0 0 20px #f9d423,0 0 40px #ff416c;}}
+@keyframes slideUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+.active{opacity:1 !important;transform:translateY(0) !important;}
+@media(max-width:768px){header h1{font-size:3rem;}header h2{font-size:1.5rem;}.socials a{font-size:2rem;}.video-container iframe,.video-container .reel{width:90%;height:200px;}}
 </style>
 </head>
 <body>
@@ -98,67 +66,82 @@ section:nth-child(even) { background:rgba(255,255,255,0.05); }
 <canvas id="particleCanvas"></canvas>
 
 <header class="container">
-  <h1>RHUTHVIK BANTU</h1>
-  <h2>Explore, Follow, and Shine!</h2>
+<h1>RHUTHVIK BANTU</h1>
+<h2>Explore, Follow, and Shine!</h2>
 
-  <div class="socials">
-    <a href="https://www.youtube.com/@rhuthvikbantu" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/rhuthvik_bantu" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:contact@rhuthvik.com"><i class="fas fa-envelope"></i></a>
-  </div>
+<div class="socials">
+<a href="https://www.youtube.com/@rhuthvikbantu" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.instagram.com/rhuthvik_bantu" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="mailto:contact@rhuthvik.com"><i class="fas fa-envelope"></i></a>
+</div>
 
-  <button class="cta-btn" onclick="alert('Thanks for following!')">Follow Now</button>
+<button class="cta-btn" onclick="alert('Thanks for following!')">Follow Now</button>
 </header>
 
 <section>
-  <h2 class="section-title">About Me</h2>
-  <p class="section-content">Hi, I am Hruthvik Bantu. On my YouTube and Instagram, I share trending content, exciting reels, and viral updates that entertain and inspire. Join my community and never miss a moment!</p>
+<h2 class="section-title">About Me</h2>
+<p class="section-content">Hi, I am rhuthvik Bantu. I create viral YouTube videos and Instagram reels. Follow me to get trending content, entertainment, and inspiration daily!</p>
 </section>
 
 <section>
-  <h2 class="section-title">Viral Highlights</h2>
-  <p class="section-content">Check out my most viewed videos and viral reels. With unique content, eye-catching visuals, and engaging posts, my page is designed for maximum impact!</p>
+<h2 class="section-title">Viral Videos</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/VIDEO_ID1" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+<div class="reel">Instagram Reel Placeholder</div>
+<div class="reel">Instagram Reel Placeholder</div>
+</div>
 </section>
 
 <section>
-  <h2 class="section-title">Subscribe & Connect</h2>
-  <p class="section-content">Hit the social icons above, subscribe, and become part of our growing community. Stay updated with fresh content, reels, and viral trends!</p>
-  <button class="cta-btn" onclick="alert('Subscribed!')">Subscribe Now</button>
+<h2 class="section-title">Followers & Subscribers</h2>
+<div class="counter-container">
+<div class="counter" id="ytCounter">0<span>YouTube Subscribers</span></div>
+<div class="counter" id="instaCounter">0<span>Instagram Followers</span></div>
+</div>
+<button class="cta-btn" onclick="alert('Subscribed & Followed!')">Subscribe Now</button>
 </section>
 
 <footer>© 2026 Rhuthvik Bantu. All rights reserved.</footer>
 
 <script>
 // Particle background
-const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particlesArray = [];
-class Particle {constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=Math.random()*3+1;this.speedX=Math.random()*1-0.5;this.speedY=Math.random()*1-0.5;}
-update(){this.x+=this.speedX;this.y+=this.speedY;if(this.x<0||this.x>canvas.width)this.speedX*=-1;if(this.y<0||this.y>canvas.height)this.speedY*=-1;}
-draw(){ctx.fillStyle='rgba(255,255,255,0.7)';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();}}
-function initParticles(){particlesArray=[];for(let i=0;i<200;i++){particlesArray.push(new Particle());}}
+const canvas=document.getElementById('particleCanvas');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particlesArray=[];
+class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=Math.random()*3+1;this.speedX=Math.random()*1-0.5;this.speedY=Math.random()*1-0.5;}update(){this.x+=this.speedX;this.y+=this.speedY;if(this.x<0||this.x>canvas.width)this.speedX*=-1;if(this.y<0||this.y>canvas.height)this.speedY*=-1;}draw(){ctx.fillStyle='rgba(255,255,255,0.7)';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();}}
+function initParticles(){particlesArray=[];for(let i=0;i<250;i++){particlesArray.push(new Particle());}}
 initParticles();
 function animateParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particlesArray.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animateParticles);}
 animateParticles();
 window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;initParticles();});
 
-// Scroll-triggered animations
-const titles = document.querySelectorAll('.section-title');
-const contents = document.querySelectorAll('.section-content');
+// Scroll-trigger animations
+const titles=document.querySelectorAll('.section-title');
+const contents=document.querySelectorAll('.section-content');
 window.addEventListener('scroll',()=>{
-  const triggerBottom = window.innerHeight/1.2;
-  titles.forEach(title=>{
-    const top = title.getBoundingClientRect().top;
-    if(top<triggerBottom) title.classList.add('active');
-  });
-  contents.forEach(content=>{
-    const top = content.getBoundingClientRect().top;
-    if(top<triggerBottom) content.classList.add('active');
-  });
+const trigger=window.innerHeight/1.2;
+titles.forEach(t=>{if(t.getBoundingClientRect().top<trigger)t.classList.add('active');});
+contents.forEach(c=>{if(c.getBoundingClientRect().top<trigger)c.classList.add('active');});
 });
+
+// Auto-increment counters
+function animateCounter(id,target,speed){
+  const el=document.getElementById(id);
+  let count=0;
+  let increment=Math.ceil(target/speed);
+  function update(){
+    count+=increment;
+    if(count>target) count=target;
+    el.firstChild.textContent=count;
+    if(count<target) requestAnimationFrame(update);
+  }
+  update();
+}
+animateCounter('ytCounter',120000,200); // Example 1.2L subscribers
+animateCounter('instaCounter',85000,200); // Example 85K followers
 </script>
 
 </body>
