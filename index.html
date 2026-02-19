@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rhuthvik Bantu - Viral Shorts Creator & Cinematic Content Strategist">
-<title>Rhuthvik Bantu | Creator Empire</title>
+<title>Creator Empire | Viral Shorts Strategy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
@@ -29,7 +28,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===== CINEMATIC INTRO ===== */
+/* INTRO */
 #intro{
 position:fixed;
 width:100%;
@@ -39,17 +38,17 @@ display:flex;
 align-items:center;
 justify-content:center;
 z-index:9999;
-animation:fadeOut 1.5s ease 3s forwards;
+animation:fadeOut 1.5s ease 2.5s forwards;
 }
 
 .intro-text{
-font-size:clamp(28px,6vw,70px);
+font-size:clamp(30px,6vw,70px);
 font-weight:800;
-letter-spacing:4px;
+letter-spacing:5px;
 background:linear-gradient(90deg,var(--primary),var(--secondary));
 -webkit-background-clip:text;
 color:transparent;
-animation:zoomIn 2s ease;
+animation:zoomIn 1.8s ease;
 }
 
 @keyframes zoomIn{
@@ -61,7 +60,7 @@ to{transform:scale(1);opacity:1;}
 to{opacity:0;visibility:hidden;}
 }
 
-/* ===== NAVBAR ===== */
+/* NAV */
 nav{
 position:fixed;
 width:100%;
@@ -70,7 +69,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -101,7 +100,7 @@ font-size:28px;
 cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 min-height:100vh;
 display:flex;
@@ -113,7 +112,7 @@ padding:0 8%;
 }
 
 .hero h1{
-font-size:clamp(36px,6vw,90px);
+font-size:clamp(36px,6vw,80px);
 font-weight:800;
 background:linear-gradient(90deg,var(--primary),var(--secondary));
 -webkit-background-clip:text;
@@ -122,17 +121,13 @@ color:transparent;
 
 .hero p{
 margin-top:20px;
-max-width:800px;
+max-width:750px;
 color:#ccc;
 font-size:clamp(16px,2vw,22px);
 }
 
 .cta{
 margin-top:40px;
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
 }
 
 .btn{
@@ -141,25 +136,24 @@ border-radius:50px;
 border:none;
 cursor:pointer;
 font-weight:600;
+background:var(--primary);
+color:black;
 transition:0.4s;
 }
-
-.primary{background:var(--primary);color:black;}
-.secondary{background:var(--secondary);color:white;}
 
 .btn:hover{
 transform:translateY(-5px);
 box-shadow:0 10px 25px rgba(0,247,255,0.5);
 }
 
-/* ===== SECTIONS ===== */
+/* SECTION */
 section{
 padding:120px 8%;
 }
 
 .section-title{
 text-align:center;
-font-size:clamp(28px,4vw,44px);
+font-size:clamp(28px,4vw,42px);
 margin-bottom:60px;
 color:var(--primary);
 }
@@ -183,7 +177,7 @@ transform:translateY(-10px) scale(1.03);
 box-shadow:0 20px 40px rgba(0,247,255,0.3);
 }
 
-/* ===== VIDEO EMBED ===== */
+/* VIDEO */
 .video-container{
 position:relative;
 padding-bottom:56.25%;
@@ -200,16 +194,17 @@ width:100%;
 height:100%;
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
 max-width:600px;
 margin:auto;
+text-align:center;
 }
 
 input{
 width:100%;
 padding:15px;
-margin:10px 0;
+margin:15px 0;
 border-radius:10px;
 border:none;
 background:#1a1a1a;
@@ -217,29 +212,28 @@ color:white;
 }
 
 .submit{
-background:var(--primary);
-color:black;
+background:var(--secondary);
+color:white;
 padding:15px 40px;
 border-radius:50px;
 border:none;
 cursor:pointer;
 font-weight:600;
+transition:0.3s;
 }
 
 .submit:hover{
-background:var(--secondary);
-color:white;
+background:var(--primary);
+color:black;
 }
 
-/* ===== FOOTER ===== */
 footer{
 padding:40px;
 text-align:center;
 background:#000;
-color:#888;
+color:#777;
 }
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 nav ul{
 position:absolute;
@@ -259,61 +253,55 @@ nav ul.active{display:flex;}
 <body>
 
 <div id="intro">
-<div class="intro-text">RHUTHVIK BANTU</div>
+<div class="intro-text">CREATOR EMPIRE</div>
 </div>
 
 <nav>
-<div class="logo">RHUTHVIK</div>
+<div class="logo">EMPIRE</div>
 <ul id="navLinks">
 <li><a href="#">Home</a></li>
+<li><a href="#strategy">Strategy</a></li>
 <li><a href="#videos">Videos</a></li>
-<li><a href="#tools">Tools</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#contact">Join</a></li>
 </ul>
 <div class="menu" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div class="hero">
-<h1>Watch. Grow. Dominate.</h1>
-<p>High-energy viral shorts & cinematic storytelling built to entertain and inspire.</p>
-
+<h1>Faceless. Viral. Powerful.</h1>
+<p>I build high-retention viral Shorts using captions, sound design, and psychological hooks — no face, no voice.</p>
 <div class="cta">
-<a href="https://youtube.com/@rhuthvikbantu" target="_blank">
-<button class="btn primary">Subscribe on YouTube</button>
-</a>
-<a href="https://instagram.com/rhuthvik_bantu" target="_blank">
-<button class="btn secondary">Follow on Instagram</button>
-</a>
+<button class="btn">Watch My Latest Short</button>
 </div>
 </div>
+
+<section id="strategy">
+<h2 class="section-title">My Viral Strategy</h2>
+<div class="grid">
+<div class="card">⚡ 2-Second Hook Formula</div>
+<div class="card">📈 Retention-Based Editing</div>
+<div class="card">🔁 Loop Ending Technique</div>
+<div class="card">🔥 Daily Posting System</div>
+</div>
+</section>
 
 <section id="videos">
-<h2 class="section-title">Featured Video</h2>
+<h2 class="section-title">Featured Short</h2>
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
 </div>
 </section>
 
-<section id="tools">
-<h2 class="section-title">Tools I Use</h2>
-<div class="grid">
-<div class="card">🎬 Editing Software</div>
-<div class="card">📱 Smartphone Setup</div>
-<div class="card">🎤 Microphone</div>
-<div class="card">💡 Lighting Setup</div>
-</div>
-</section>
-
 <section id="contact">
-<h2 class="section-title">Join My Growth Journey</h2>
+<h2 class="section-title">Join The Empire</h2>
 <div class="contact">
-<input type="email" placeholder="Enter your email">
+<input type="email" placeholder="Enter your email to learn the system">
 <button class="submit">Join Now</button>
 </div>
 </section>
 
 <footer>
-© 2026 Rhuthvik Bantu | Creator Empire
+© 2026 Creator Empire | Faceless Growth System
 </footer>
 
 <script>
