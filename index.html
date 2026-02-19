@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
-/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{
   font-family:'Roboto',sans-serif;
@@ -20,169 +19,29 @@ body{
   color:#f5f5f5;
   overflow-x:hidden;
 }
-
-/* Container */
 .container{max-width:1400px;margin:auto;padding:50px 20px;}
-
-/* Header */
-header{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  padding:0 20px;
-}
-header h1{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(3rem,6vw,5rem);
-  color:#ffffff;
-  margin-bottom:20px;
-}
-header h2{
-  font-size:clamp(1.5rem,3vw,2rem);
-  color:#cccccc;
-  margin-bottom:40px;
-  max-width:700px;
-  line-height:1.4;
-}
-
-/* Socials */
-.socials{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-bottom:50px;
-}
-.socials a{
-  font-size:2.5rem;
-  color:#ffffff;
-  transition: all 0.3s;
-}
-.socials a:hover{
-  color:#ff6b6b;
-  transform:scale(1.2);
-}
-
-/* Sections */
-section{
-  padding:100px 20px;
-  min-height:70vh;
-  position:relative;
-  opacity:0;
-  transform:translateY(50px);
-  transition: all 1s ease-out;
-}
-.active{
-  opacity:1;
-  transform:translateY(0);
-}
-.section-title{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(2rem,4vw,3rem);
-  color:#ffffff;
-  margin-bottom:30px;
-}
-.section-content{
-  font-size:clamp(1rem,1.8vw,1.2rem);
-  max-width:900px;
-  margin:auto;
-  line-height:1.8;
-  color:#dddddd;
-  margin-bottom:40px;
-}
-
-/* Video & Reel containers */
-.video-container{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-}
-.video-container iframe,.video-container .reel{
-  width:400px;
-  height:225px;
-  border-radius:12px;
-  border:none;
-  background:#1c1c1c;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.video-container iframe:hover,.video-container .reel:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 30px #ff6b6b;
-}
-.reel{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:1rem;
-  color:#ffffff;
-  cursor:pointer;
-  text-align:center;
-  position:relative;
-}
-.reel img{
-  width:100%;
-  height:100%;
-  border-radius:12px;
-  object-fit:cover;
-}
-
-/* Counters */
-.counter-container{
-  display:flex;
-  justify-content:center;
-  gap:80px;
-  margin-top:50px;
-}
-.counter{
-  font-size:2.5rem;
-  font-weight:700;
-  text-align:center;
-}
-.counter span{
-  display:block;
-  font-size:1rem;
-  font-weight:400;
-  color:#aaaaaa;
-}
-
-/* Buttons */
-.cta-btn{
-  margin-top:30px;
-  padding:18px 50px;
-  font-size:1.1rem;
-  border-radius:50px;
-  border:2px solid #ffffff;
-  color:#ffffff;
-  background:transparent;
-  font-weight:500;
-  cursor:pointer;
-  transition: all 0.3s;
-}
-.cta-btn:hover{
-  background:#ff6b6b;
-  border-color:#ff6b6b;
-  transform:scale(1.05);
-}
-
-/* Footer */
-footer{
-  padding:20px;
-  text-align:center;
-  color:#aaaaaa;
-  background: rgba(0,0,0,0.2);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  header h1{font-size:3rem;}
-  header h2{font-size:1.2rem;}
-  .socials a{font-size:2rem;}
-  .video-container iframe,.video-container .reel{width:90%;height:200px;}
-}
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:0 20px;}
+header h1{font-family:'Montserrat',sans-serif;font-size:clamp(3rem,6vw,5rem);color:#ffffff;margin-bottom:20px;}
+header h2{font-size:clamp(1.5rem,3vw,2rem);color:#cccccc;margin-bottom:40px;max-width:700px;line-height:1.4;}
+.socials{display:flex;justify-content:center;gap:40px;margin-bottom:50px;}
+.socials a{font-size:2.5rem;color:#ffffff;transition: all 0.3s;}
+.socials a:hover{color:#ff6b6b;transform:scale(1.2);}
+section{padding:100px 20px;min-height:70vh;position:relative;opacity:0;transform:translateY(50px);transition: all 1s ease-out;}
+.active{opacity:1;transform:translateY(0);}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);color:#ffffff;margin-bottom:30px;}
+.section-content{font-size:clamp(1rem,1.8vw,1.2rem);max-width:900px;margin:auto;line-height:1.8;color:#dddddd;margin-bottom:40px;}
+.video-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+.video-container iframe,.video-container .reel{width:400px;height:225px;border-radius:12px;border:none;background:#1c1c1c;transition: transform 0.3s, box-shadow 0.3s;}
+.video-container iframe:hover,.video-container .reel:hover{transform:scale(1.05);box-shadow:0 0 30px #ff6b6b;}
+.reel{display:flex;justify-content:center;align-items:center;font-size:1rem;color:#ffffff;cursor:pointer;text-align:center;position:relative;}
+.reel img{width:100%;height:100%;border-radius:12px;object-fit:cover;}
+.counter-container{display:flex;justify-content:center;gap:80px;margin-top:50px;}
+.counter{font-size:2.5rem;font-weight:700;text-align:center;}
+.counter span{display:block;font-size:1rem;font-weight:400;color:#aaaaaa;}
+.cta-btn{margin-top:30px;padding:18px 50px;font-size:1.1rem;border-radius:50px;border:2px solid #ffffff;color:#ffffff;background:transparent;font-weight:500;cursor:pointer;transition: all 0.3s;}
+.cta-btn:hover{background:#ff6b6b;border-color:#ff6b6b;transform:scale(1.05);}
+footer{padding:20px;text-align:center;color:#aaaaaa;background: rgba(0,0,0,0.2);}
+@media(max-width:768px){header h1{font-size:3rem;}header h2{font-size:1.2rem;}.socials a{font-size:2rem;}.video-container iframe,.video-container .reel{width:90%;height:200px;}}
 </style>
 </head>
 <body>
@@ -194,6 +53,7 @@ footer{
 <div class="socials">
 <a href="https://www.youtube.com/@rhuthvikbantu" target="_blank"><i class="fab fa-youtube"></i></a>
 <a href="https://www.instagram.com/rhuthvik_bantu" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.instagram.com/sandalwood_star_fc" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="mailto:contact@rhuthvik.com"><i class="fas fa-envelope"></i></a>
 </div>
 
@@ -209,15 +69,12 @@ footer{
 <h2 class="section-title">My Videos & Reels</h2>
 <div class="video-container">
 <!-- YouTube embeds autoplay muted -->
-<iframe src="https://www.youtube.com/embed/VIDEO_ID1?autoplay=0&mute=1" title="YouTube video 1" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/VIDEO_ID2?autoplay=0&mute=1" title="YouTube video 2" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/GPEoD2V4KEI?autoplay=0&mute=1" title="YouTube video 1" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/q9Tt12ZXcXE?autoplay=0&mute=1" title="YouTube video 2" allowfullscreen></iframe>
 
 <!-- Instagram Reels previews -->
-<div class="reel" onclick="window.open('https://www.instagram.com/p/REEL_ID1/', '_blank')">
-  <img src="https://via.placeholder.com/400x225.png?text=Instagram+Reel+1" alt="Reel 1">
-</div>
-<div class="reel" onclick="window.open('https://www.instagram.com/p/REEL_ID2/', '_blank')">
-  <img src="https://via.placeholder.com/400x225.png?text=Instagram+Reel+2" alt="Reel 2">
+<div class="reel" onclick="window.open('https://www.instagram.com/reel/DKfOOQGhGIU/?igsh=MTY3em1oZ2gwcmM0MA==', '_blank')">
+  <img src="https://via.placeholder.com/400x225.png?text=Instagram+Reel" alt="Reel 1">
 </div>
 </div>
 </section>
