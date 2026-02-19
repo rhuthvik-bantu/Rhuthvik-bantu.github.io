@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhuthvik Bantu | Connect & Explore</title>
+<title>Rhuthvik Bantu | Explore & Shine</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -20,46 +20,50 @@
   scroll-behavior: smooth;
 }
 
-/* Body */
 body {
   font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow-x: hidden;
-  perspective: 1000px;
 }
 
 /* Container */
 .container {
   text-align: center;
-  max-width: 1200px;
-  padding: 20px;
-  animation: fadeIn 2s ease-in-out forwards;
+  padding: 50px 20px;
 }
 
-/* Animated Intro */
-h1 {
+/* Header Section */
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Intro Text */
+header h1 {
   font-family: 'Press Start 2P', cursive;
-  font-size: clamp(1.5rem, 6vw, 4rem);
-  background: linear-gradient(90deg, #ff416c, #ff4b2b, #1f4037, #99f2c8);
+  font-size: clamp(2rem, 6vw, 4rem);
+  background: linear-gradient(90deg, #ff416c, #ff4b2b, #f9d423, #1f4037);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGlow 3s infinite alternate;
+  animation: glowText 3s infinite alternate;
   margin-bottom: 20px;
 }
 
-h2 {
+header h2 {
   font-size: clamp(1rem, 4vw, 2rem);
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #f0f0f0;
   animation: slideUp 2s ease forwards;
 }
 
-/* Social Buttons */
+/* Social Links */
 .socials {
   display: flex;
   justify-content: center;
@@ -68,11 +72,9 @@ h2 {
 }
 
 .socials a {
-  display: inline-block;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
   transition: transform 0.3s, color 0.3s;
-  text-decoration: none;
 }
 
 .socials a:hover {
@@ -80,26 +82,41 @@ h2 {
   transform: scale(1.3) rotate(-10deg);
 }
 
-/* Animated Background Particles */
-.particles {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: -1;
+/* Sections */
+section {
+  padding: 80px 20px;
+  min-height: 80vh;
 }
 
-/* Buttons */
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #f9d423, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 3s infinite alternate;
+}
+
+.section-content {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.8;
+  color: #ddd;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+/* Call to Action Button */
 .cta-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 40px;
+  margin-top: 30px;
+  padding: 15px 50px;
   border: 2px solid #fff;
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
   border-radius: 50px;
   transition: all 0.4s ease;
   cursor: pointer;
@@ -111,29 +128,29 @@ h2 {
   transform: scale(1.1) rotate(-2deg);
 }
 
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1rem; }
-  .socials a { font-size: 1.5rem; }
+/* Particle Canvas */
+#particleCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
 }
 
-@media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 0.9rem; }
-  .socials { gap: 20px; }
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  background: rgba(0,0,0,0.3);
 }
 
 /* Animations */
-@keyframes textGlow {
+@keyframes glowText {
   0% { text-shadow: 0 0 5px #ff416c, 0 0 10px #ff416c; }
   50% { text-shadow: 0 0 20px #ff4b2b, 0 0 40px #ff4b2b; }
-  100% { text-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  100% { text-shadow: 0 0 10px #f9d423, 0 0 20px #f9d423; }
 }
 
 @keyframes slideUp {
@@ -141,33 +158,64 @@ h2 {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Footer Animation */
-footer {
-  margin-top: 60px;
-  font-size: 0.9rem;
-  color: #ccc;
-  animation: fadeIn 2s ease-in-out forwards;
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  header h2 { font-size: 1rem; }
+  .socials a { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.5rem; }
+  header h2 { font-size: 0.9rem; }
+  .socials { gap: 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- Particles Canvas -->
-<canvas class="particles" id="particleCanvas"></canvas>
+<!-- Particle Background -->
+<canvas id="particleCanvas"></canvas>
 
-<div class="container">
+<!-- Header Section -->
+<header class="container">
   <h1>WELCOME RHUTHVIK BANTU</h1>
-  <h2>Your Hub for YouTube & Instagram</h2>
-
+  <h2>Explore, Follow, and Shine!</h2>
+  
   <div class="socials">
-    <a href="https://www.youtube.com/@rhuthvikbantu" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/rhuthvik_bantu" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:contact@rhuthvik.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.youtube.com/@rhuthvikbantu" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/rhuthvik_bantu" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:contact@rhuthvik.com"><i class="fas fa-envelope"></i></a>
   </div>
-
+  
   <button class="cta-btn" onclick="alert('Thanks for visiting!')">Click Me!</button>
-  <footer>© 2026 Rhuthvik Bantu. All rights reserved.</footer>
-</div>
+</header>
+
+<!-- About Section -->
+<section>
+  <h2 class="section-title">About Me</h2>
+  <p class="section-content">I am Hruthvik Bantu, creating amazing content on YouTube & Instagram. Here, you’ll discover exciting videos, reels, and updates. Join me and be part of my growing community!</p>
+</section>
+
+<!-- Highlights Section -->
+<section>
+  <h2 class="section-title">Highlights</h2>
+  <p class="section-content">Check out trending content, viral reels, and behind-the-scenes moments. From entertainment to tech, my content is designed to inspire and engage everyone, everywhere!</p>
+</section>
+
+<!-- Call To Action Section -->
+<section>
+  <h2 class="section-title">Join & Follow</h2>
+  <p class="section-content">Hit the social icons above, subscribe, and never miss a moment of fun and learning. Let’s make every click count!</p>
+  <button class="cta-btn" onclick="alert('Followed!')">Follow Now</button>
+</section>
+
+<footer>© 2026 Rhuthvik Bantu. All rights reserved.</footer>
 
 <script>
 // Particle Animation
